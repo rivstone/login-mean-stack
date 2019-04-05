@@ -19,7 +19,12 @@ module.exports = function (config) {
       dir: require('path').join(__dirname, 'coverage'), reports: [ 'html', 'lcovonly' ],
       fixWebpackSourcePaths: true
     },
-    
+    customLaunchers: {
+      Chrome_with_debugging: {
+        base: 'Chrome',
+        chromeDataDir: path.resolve(__dirname, '.chrome')
+      }
+    }
     reporters: ['progress', 'kjhtml'],
     port: 9876,
     colors: true,
